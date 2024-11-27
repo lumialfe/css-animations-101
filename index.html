@@ -31,41 +31,45 @@
         <h3>How can we use it?</h3>
         <p>Let's take a look at the main properties that take part in a transition:</p>
         <section>
-          <h4>1. Transition Property</h4>
-          <p>Here, we specify <b>WHAT</b> we want to animate. For example, if we want to animate the background color,
-            we'd write:</p>
-          <div class="code">
+            <h4>1. Transition Property</h4>
+            <p>Here, we specify <b>WHAT</b> we want to animate. For example, if we want to animate the background color,
+                we'd write:</p>
+            <div class="code">
 <pre><code>.element {
     transition-property: background-color;
 }
 </code></pre>
-          </div>
+            </div>
 
-          <h4>2. Transition Duration</h4>
-          <p>Here, we specify <b>HOW LONG</b> we want to animate it. For example, if we want the animation to last 0.5 seconds,
-              we'd write:</p>
-          <div class="code">
+            <h4>2. Transition Duration</h4>
+            <p>Here, we specify <b>HOW LONG</b> we want to animate it. For example, if we want the animation to last 0.5
+                seconds,
+                we'd write:</p>
+            <div class="code">
 <pre><code>.element {
     transition-duration: 0.5s;
 }
 </code></pre>
-          </div>
+            </div>
 
-          <h4>3. Transition Timing Function</h4>
-          <p>Here, we specify <b>HOW</b> we want to animate it. For example, if we want the animation to be smooth at the beginning and end,
-              we'd write:</p>
-          <div class="code">
+            <h4>3. Transition Timing Function</h4>
+            <p>Here, we specify <b>HOW</b> we want to animate it. For example, if we want the animation to be smooth at
+                the beginning and end,
+                we'd write:</p>
+            <div class="code">
 <pre><code>.element {
     transition-timing-function: ease-in-out;
 }
 </code></pre>
-          </div>
-          <p>There are several options here, and they all affect the timing of the transition. You can check them out <a href="https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp" target="_blank">here</a>.</p>
-          <br/>
-          <p>There's also Transition Delay, but I'm sure you are smart enough to know what it does &#128540;</p>
-          <br/>
+            </div>
+            <p>There are several options here, and they all affect the timing of the transition. You can check them out
+                <a href="https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp"
+                   target="_blank">here</a>.</p>
+            <br/>
+            <p>There's also Transition Delay, but I'm sure you are smart enough to know what it does &#128540;</p>
+            <br/>
 
-          <h4>Now, let's compact it all!</h4>
+            <h4>Now, let's compact it all!</h4>
             <p>Instead of writing all of these properties separately, we can write them all in one line:</p>
             <div class="code">
 <pre><code>.element {
@@ -74,58 +78,62 @@
 </code></pre>
             </div>
         </section>
-      <h3>On to some examples!</h3>
-      <p>Let's take a look at some examples of transitions:</p>
-      <section>
-        How will the previous example look like if applied to a cool button?
-        <div class="split-window">
-          <div class="code">
+        <h3>On to some examples!</h3>
+        <p>Let's take a look at some examples of transitions:</p>
+        <section>
+            How will the previous example look like if applied to a cool button?
+            <div class="split-window">
+                <div class="code">
 <pre><code>background-color: blue;
 transition: background-color 0.5s ease-in-out;
 &:hover {
     background-color: yellow;
 }</code></pre>
-          </div>
-          <div style="display: flex; justify-content: center; align-items: center;">
-            <button onclick="window.alert('I did not tell you to click me!')" class="button-example">Hover me!</button>
-          </div>
-        </div>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <button onclick="window.alert('I did not tell you to click me!')" class="button-example">Hover me!
+                    </button>
+                </div>
+            </div>
 
-        <p>Maybe something a bit spookier?</p>
-        <div class="split-window">
-          <div class="code">
+            <p>Maybe something a bit spookier?</p>
+            <div class="split-window">
+                <div class="code">
 <pre><code>transition: opacity 0.5s ease-in-out;
 &:hover {
     opacity: 0;
 }</code></pre>
-          </div>
-          <div style="display: flex; justify-content: center; align-items: center;">
-            <div class="ghost">&#128123;</div>
-          </div>
-        </div>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div class="ghost">&#128123;</div>
+                </div>
+            </div>
 
-        <p>Or maybe something a bit more complicated? Let's see what else can we do with transitions!</p>
-      <div class="code">
+            <p>Or maybe something a bit more complicated? Let's see what else can we do with transitions!</p>
+            <div class="code">
 <pre><code>transition-property: width, height, background-position, color, font-size;
 transition-duration: 1.5s;
 transition-timing-function: ease-in-out;
 </code></pre>
-      </div>
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <div class="psycho-background">
-                Hello!
             </div>
-        </div>
-          <br/>
-      <p>
-          As you can see, here we have animated the width, height, background position, color, and font size of the element. To do that, we
-          divided the property <span class="code-line">transition</span> into its different parts, but we could have written it all in one line:
-      </p>
-<div class="code">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <span style="font-size: 3rem; margin-right: 1rem">&#128073;</span>
+                <div class="psycho-background">
+                    Hello!
+                </div>
+            </div>
+            <br/>
+            <p>
+                As you can see, here we have animated the width, height, background position, color, and font size of
+                the element. To do that, we
+                divided the property <span class="code-line">transition</span> into its different parts, but we could
+                have written it all in one line:
+            </p>
+            <div class="code">
 <pre><code>transition: width 1.5s ease-in-out, height 1.5s ease-in-out, background-position 1.5s ease-in-out, ...;
 </code></pre>
-          </div>
-      </section>
+            </div>
+        </section>
 
     </section>
 
