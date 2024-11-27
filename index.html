@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS Animations 101</title>
+    <link rel="icon" href="./media/logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="styles/default.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -59,6 +60,7 @@
 }
 </code></pre>
           </div>
+          <p>There are several options here, and they all affect the timing of the transition. You can check them out <a href="https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp" target="_blank">here</a>.</p>
           <br/>
           <p>There's also Transition Delay, but I'm sure you are smart enough to know what it does &#128540;</p>
           <br/>
@@ -84,7 +86,7 @@ transition: background-color 0.5s ease-in-out;
     background-color: yellow;
 }</code></pre>
           </div>
-          <div>
+          <div style="display: flex; justify-content: center; align-items: center;">
             <button onclick="window.alert('I did not tell you to click me!')" class="button-example">Hover me!</button>
           </div>
         </div>
@@ -98,11 +100,31 @@ transition: background-color 0.5s ease-in-out;
 }</code></pre>
           </div>
           <div style="display: flex; justify-content: center; align-items: center;">
-            <span class="ghost">&#128123;</span>
+            <div class="ghost">&#128123;</div>
           </div>
         </div>
 
-        <p>Or maybe something a bit more complicated? Let's see how far we can go with transitions!</p>
+        <p>Or maybe something a bit more complicated? Let's see what else can we do with transitions!</p>
+      <div class="code">
+<pre><code>transition-property: width, height, background-position, color, font-size;
+transition-duration: 1.5s;
+transition-timing-function: ease-in-out;
+</code></pre>
+      </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div class="psycho-background">
+                Hello!
+            </div>
+        </div>
+          <br/>
+      <p>
+          As you can see, here we have animated the width, height, background position, color, and font size of the element. To do that, we
+          divided the property <span class="code-line">transition</span> into its different parts, but we could have written it all in one line:
+      </p>
+<div class="code">
+<pre><code>transition: width 1.5s ease-in-out, height 1.5s ease-in-out, background-position 1.5s ease-in-out, ...;
+</code></pre>
+          </div>
       </section>
 
     </section>
