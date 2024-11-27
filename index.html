@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CSS Animations 101</title>
-  <link rel="stylesheet" href="styles/default.css">
+    <meta charset="UTF-8">
+    <title>CSS Animations 101</title>
+
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-  <h1>CSS Animations 101</h1>
+<header>
+    <h1>CSS Animations <span class="primary">101</span></h1>
+    <span>by LuisMi Alonso</span>
+</header>
+
+<main>
+    <h2>1. Transitions</h2>
+    <section>
+        <h3>What does W3C say? &#129488;</h3>
+        <blockquote>CSS transitions allow you to change <b>property values smoothly</b>,
+            over a given <b>duration</b>.
+        </blockquote>
+        <p>In simple words: it's like an easy to implement animation, which we'll take a look at later on.</p>
+        <br/>
+        <h3>How can we use it?</h3>
+        <p>Let's take a look at the main properties that take part in a transition:</p>
+        <section>
+          <h4>1. Transition Property</h4>
+          <p>Here, we specify <b>WHAT</b> we want to animate. For example, if we want to animate the background color,
+            we'd write:</p>
+          <div class="code">
+<pre><code>.element {
+    transition-property: background-color;
+}
+</code></pre>
+          </div>
+
+          <h4>2. Transition Duration</h4>
+          <p>Here, we specify <b>HOW LONG</b> we want to animate it. For example, if we want the animation to last 0.5 seconds,
+              we'd write:</p>
+          <div class="code">
+<pre><code>.element {
+    transition-duration: 0.5s;
+}
+</code></pre>
+          </div>
+
+          <h4>3. Transition Timing Function</h4>
+          <p>Here, we specify <b>HOW</b> we want to animate it. For example, if we want the animation to be smooth at the beginning and end,
+              we'd write:</p>
+          <div class="code">
+<pre><code>.element {
+    transition-timing-function: ease-in-out;
+}
+</code></pre>
+          </div>
+          <br/>
+          <p>There's also Transition Delay, but I'm sure you are smart enough to know what it does &#128540;</p>
+          <br/>
+
+          <h4>Now, let's compact it all!</h4>
+            <p>Instead of writing all of these properties separately, we can write them all in one line:</p>
+            <div class="code">
+<pre><code>.element {
+    transition: background-color 0.5s ease-in-out;
+}
+</code></pre>
+            </div>
+        </section>
+      <h3>On to some examples!</h3>
+      <p>Let's take a look at some examples of transitions:</p>
+      <section>
+        How will the previous example look like if applied to a cool button?
+        <div class="split-window">
+          <div class="code">
+<pre><code>background-color: blue;
+transition: background-color 0.5s ease-in-out;
+&:hover {
+    background-color: yellow;
+}</code></pre>
+          </div>
+          <div>
+            <button onclick="window.alert('I did not tell you to click me!')" class="button-example">Hover me!</button>
+          </div>
+        </div>
+
+        <p>Maybe something a bit spookier?</p>
+        <div class="split-window">
+          <div class="code">
+<pre><code>transition: opacity 0.5s ease-in-out;
+&:hover {
+    opacity: 0;
+}</code></pre>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <span class="ghost">&#128123;</span>
+          </div>
+        </div>
+
+        <p>Or maybe something a bit more complicated? Let's see how far we can go with transitions!</p>
+      </section>
+
+    </section>
+
+    <h2>2. Animations</h2>
+    <section></section>
+</main>
+
+<footer>
+
+</footer>
 </body>
 </html>
