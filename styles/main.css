@@ -37,6 +37,14 @@ body {
 
     padding: 1.5rem 16rem;
     font-size: 1.25rem;
+
+    transition-property: color, background-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+input, button {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 header {
@@ -59,6 +67,7 @@ aside {
     padding: 1rem 2rem;
     border-radius: 1rem;
     background-color: var(--color-background-dark);
+    transition: background-color 0.5s ease-in-out;
 }
 
 .back-to-top {
@@ -77,6 +86,7 @@ aside {
     font-weight: 600;
     font-size: 2rem;
     cursor: pointer;
+    opacity: 0;
     transition: background-color 0.25s ease-in-out, opacity 0.25s ease-in-out;
 
     &:hover {
@@ -89,6 +99,7 @@ section {
     padding: 1rem 2rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
+    transition: background-color 0.5s ease-in-out;
 }
 
 footer {
@@ -172,6 +183,7 @@ h5 {
     color: var(--color-background);
     font-size: 1rem;
     overflow: hidden;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .split-window {
@@ -252,6 +264,7 @@ h5 {
     color: var(--color-code);
     font-weight: 400;
     font-family: 'Fira Code', monospace;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 table {
@@ -299,6 +312,7 @@ th, td {
     background-color: var(--color-primary);
     color: var(--color-background);
     text-decoration: none;
+    transition: none !important;
 }
 
 .ex-btn-no-trans:hover {
