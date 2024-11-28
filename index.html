@@ -19,10 +19,22 @@
     <span>by LuisMi Alonso</span>
 </header>
 
+<aside>
+    <h4>Table of Contents</h4>
+    <ul>
+        <li><a href="#transitions">1. Transitions</a></li>
+        <li><a href="#animations">2. Animations</a></li>
+    </ul>
+</aside>
+
+<button id="back-to-top" class="back-to-top" onclick="window.scrollTo(0, 0)">
+    <span>&#8593;</span>
+</button>
+
 <main>
-    <h2>1. Transitions</h2>
+    <h2 id="transitions">1. Transitions</h2>
     <section>
-        <h3>What does W3C say? &#129488;</h3>
+        <h3>What does the W3C say? &#129488;</h3>
         <blockquote>CSS transitions allow you to change <b>property values smoothly</b>,
             over a given <b>duration</b>.
         </blockquote>
@@ -221,9 +233,9 @@ transition-timing-function: ease-in-out;
         </section>
     </section>
 
-    <h2>2. Animations</h2>
+    <h2 id="animations">2. Animations</h2>
     <section>
-        <h3>What does W3C say? &#129488;</h3>
+        <h3>What does the W3C say? &#129488;</h3>
         <blockquote>CSS allows <b>animation</b> of HTML elements <b>without</b> using JavaScript!.</blockquote>
         <p>
             Let us ponder in that affirmation for a second here. Back in the day <i>-I guess, I wasn't around really-</i>
@@ -242,8 +254,29 @@ transition-timing-function: ease-in-out;
         <section>
             <h4>1. Keyframes</h4>
             <p>Keyframes are the <b>steps</b> of the animation. They define the <b>start</b> and <b>end</b> of the animation,
-                and any <b>intermediate</b> steps. We can define as many keyframes as we want, but the most common ones are
-                <b>0%</b> and <b>100%</b>, which represent the start and end of the animation, respectively.</p>
+                as well as any <b>intermediate steps</b>. We can define as many keyframes as we want, but the most common ones are
+                <b>0%</b> and <b>100%</b>, which represent the start and end of the animation, respectively. Let's see an example:
+            </p>
+            <div class="split-window">
+                <div class="code">
+<pre><code>@keyframes example-1 {
+    0% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: orange;
+    }
+}</code></pre>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
+                    <div class="example-animation-1"></div>
+                </div>
+            </div>
+            <p>
+                In this example, we have defined a keyframe of <b>name</b> <span class="code-line">example-1</span> that changes the
+                background color of the element from yellow to orange. Naming your animations is essential, as it's the way you'll
+                <b>reference</b> them later on.
+            </p>
         </section>
     </section>
 </main>
@@ -251,5 +284,16 @@ transition-timing-function: ease-in-out;
 <footer>
 
 </footer>
+
+<script>
+    window.addEventListener('scroll', () => {
+        const backToTop = document.getElementById('back-to-top');
+        if (window.scrollY > 250) {
+            backToTop.style.opacity = 1;
+        } else {
+            backToTop.style.opacity = 0;
+        }
+    });
+</script>
 </body>
 </html>
