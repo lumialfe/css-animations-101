@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
 </head>
+
 <body>
 <header>
     <h1>CSS Animations <span class="primary">101</span></h1>
@@ -22,13 +23,24 @@
 <aside>
     <h4>Table of Contents</h4>
     <ul>
-        <li><a href="#transitions">1. Transitions</a></li>
-        <li><a href="#animations">2. Animations</a></li>
+        <li><a href="#transitions">Transitions</a></li>
+        <li><a href="#animations">Animations</a></li>
     </ul>
 </aside>
 
 <button id="back-to-top" class="back-to-top" onclick="window.scrollTo(0, 0)">
     <span>&#8593;</span>
+</button>
+
+<button
+    id="dark-mode-toggle"
+    class="dark-mode-toggle"
+    onclick="
+        document.documentElement.classList.toggle('dark');
+        document.getElementById('dark-mode-toggle').textContent = document.documentElement.classList.contains('dark') ? '🌞' : '🌚';
+    "
+>
+    <span>🌚</span>
 </button>
 
 <main>
@@ -253,6 +265,7 @@ transition-timing-function: ease-in-out;
         </p>
         <section>
             <h4>1. Keyframes</h4>
+            <section>
             <p>Keyframes are the <b>steps</b> of the animation. They define the <b>start</b> and <b>end</b> of the animation,
                 as well as any <b>intermediate steps</b>. We can define as many keyframes as we want, but the most common ones are
                 <b>0%</b> and <b>100%</b>, which represent the start and end of the animation, respectively. Let's see an example:
@@ -277,6 +290,186 @@ transition-timing-function: ease-in-out;
                 background color of the element from yellow to orange. Naming your animations is essential, as it's the way you'll
                 <b>reference</b> them later on.
             </p>
+            <p>
+                As we said, we can define as many keyframes as we want. Let's see another example with some intermediate steps in
+                the animation:
+            </p>
+            <div class="split-window">
+                <div class="code">
+<pre><code>@keyframes example-2 {
+    0% {
+        background-color: red;
+    }
+    15% {
+        background-color: orange;
+    }
+    30% {
+        background-color: yellow;
+    }
+    45% {
+        background-color: green;
+    }
+    60% {
+        background-color: blue;
+    }
+    75% {
+        background-color: indigo;
+    }
+    100% {
+        background-color: violet;
+    }
+}</code></pre>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
+                    <div class="example-animation-2"></div>
+                </div>
+            </div>
+            <p>But of course, we can change any property we want, not only the background color.</p>
+            <div class="split-window">
+                <div class="code">
+<pre><code>@keyframes example-3 {
+    0% {
+        scale: 0.9;
+    }
+    100% {
+        scale: 1.1;
+    }
+}</code></pre>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
+                    <p class="example-animation-3">&#128153;</p>
+                </div>
+            </div>
+        </section>
+            <h4>2. Animation Properties</h4>
+            <p>
+                Similar to transitions, animations have several properties that define how the animation will behave. Let's take a look
+                at the ones that differ from transitions:
+            </p>
+            <section>
+                <h5>2.1. Animation Name</h5>
+                <p>
+                    We have already seen this one. <span class="code-line">animation-name</span> is the property that references the
+                    keyframes we want to use in the animation. For example:
+                </p>
+                <div class="code">
+<pre><code>.element {
+    animation-name: example-1;
+}</code></pre>
+                </div>
+                <h5>2.2. Animation Iteration Count</h5>
+                <p>
+                    This property specifies <b>how many times</b> the animation will run. For example, if we want the animation to run
+                    indefinitely, we'd write:
+                </p>
+                <div class="code">
+<pre><code>.element {
+    animation-iteration-count: infinite;
+}</code></pre>
+                </div>
+                <p>It can also be a number, like <span class="code-line">5</span>, if we want the animation to run 5 times.</p>
+                <h5>2.3. Animation Direction</h5>
+                <p>
+                    This property specifies the <b>direction</b> of the animation. For example, if we want the animation to run in reverse,
+                    we'd write:
+                </p>
+                <div class="code">
+<pre><code>.element {
+    animation-direction: reverse;
+}</code></pre>
+                </div>
+                <p>
+                    Other options are <span class="code-line">normal</span>, <span class="code-line">alternate</span>, and
+                    <span class="code-line">alternate-reverse</span>. These last two options make the animation run in reverse every
+                    other iteration, like the previous example with the beating heart &#128153;.
+                </p>
+                <h5>2.4. Animation Fill Mode</h5>
+                <p>
+                    This property specifies what happens <b>before and after</b> the animation. For example, if we want the element to
+                    <b>maintain the properties</b> of the last keyframe after the animation has finished, we'd write:
+                </p>
+                <div class="code">
+<pre><code>.element {
+    animation-fill-mode: forwards;
+}</code></pre>
+                </div>
+                <p>
+                    Other options are <span class="code-line">none</span>, <span class="code-line">backwards</span>, and
+                    <span class="code-line">both</span>. These options make the element maintain the properties of the first keyframe
+                    before the animation starts, or both, respectively.
+                </p>
+                <h5>2.5 Other</h5>
+                <p>
+                    In the same way as with transitions, we can also specify the <span class="code-line">duration</span>,
+                    <span class="code-line">timing-function</span>, and <span class="code-line">delay</span> of the animation.
+                </p>
+                <h5>Now, back to compacting!</h5>
+                <p>
+                    Instead of writing all of these properties separately, we can write them all in one line, just like in transitions:
+                </p>
+                <div class="code">
+<pre><code>.element {
+    animation: example-1 2s infinite alternate forwards ease-in-out;
+}</code></pre>
+                </div>
+            </section>
+            <h3>On to some more examples!</h3>
+            <p>Let's take a look at some more <i>(and cooler)</i> examples of animations:</p>
+            <section>
+                <h4>1. Loading Spinner</h4>
+                <p>
+                    Let's begin by creating something easy but really useful: a loading spinner. We can create a spinner with just
+                    a few lines of CSS:
+                </p>
+                <div class="split-window">
+                    <div class="code">
+<pre><code>@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.spinner {
+    animation: spinner 1s infinite linear;
+}</code></pre>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                <p>
+                    Now, imagine the amount of JS code you'd have to write to achieve the same effect. CSS animations are really
+                    a <b>timesaver</b> when it comes to simple, reusable animations.
+                </p>
+
+                <h4>2. Button Animation on Hover</h4>
+                <p>
+                    As with transitions, we can also create animations on hover. Let's see an example of a button:
+                </p>
+                <div class="split-window">
+                    <div class="code">
+<pre><code>@keyframes button-hover {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+.button-hover:hover {
+    animation: button-hover 0.5s infinite;
+}</code></pre>
+                </div>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <button class="button-hover">Hover me!</button>
+                    </div>
+                </div>
+                <p>
+                    What's special about this is that, as we want 0% and 100% to be the same, we can <b>write them together</b>.
+                </p>
+            </section>
         </section>
     </section>
 </main>
