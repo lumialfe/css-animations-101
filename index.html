@@ -469,6 +469,74 @@ transition-timing-function: ease-in-out;
                 <p>
                     What's special about this is that, as we want 0% and 100% to be the same, we can <b>write them together</b>.
                 </p>
+
+                <h4>3. Card Animation</h4>
+                <p>
+                    Let's kick it up a notch now. Let's create a card that both appears from the right on render and, when hovered,
+                    does a little dance. We can achieve this with the following code:
+                </p>
+                <div class="split-window">
+                    <div class="code">
+<pre><code>.slide-in-animation {
+    animation: slide-in 1s ease-in-out;
+}
+
+.card-dance-animation {
+    animation: card-dance 0.25s 3 ease-in-out;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes card-dance {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+</code></pre>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center;">
+                        <div class="card-example-1" onclick="
+                            document.querySelector('.card-example-1').classList.toggle('card-dance-animation')
+                            setTimeout(() => {
+                                document.querySelector('.card-example-1').classList = 'card-example-1';
+                            }, 750);
+                        ">
+                            <div class="card-header"></div>
+                            <div class="card-body">Hello!</div>
+                        </div>
+                        <button
+                            onclick="
+                                document.querySelector('.card-example-1').classList.toggle('slide-in-animation');
+                                setTimeout(() => {
+                                    document.querySelector('.card-example-1').classList = 'card-example-1';
+                                }, 1000);
+                            "
+                        >Replay</button>
+                    </div>
+                </div>
+
+                <h4>4. Text Animation</h4>
             </section>
         </section>
     </section>
