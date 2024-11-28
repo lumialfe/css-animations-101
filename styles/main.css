@@ -82,7 +82,7 @@ b {
 
 a {
     color: var(--color-primary);
-    text-decoration: none;
+    text-decoration: underline;
     transition: color, font-weight 0.25s ease-in-out;
 
     &:hover {
@@ -191,3 +191,98 @@ h2 {
     font-weight: 400;
     font-family: 'Fira Code', monospace;
 }
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+th, td {
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.ex-btn {
+    display: inline-block;
+    width: 8rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50rem;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    text-decoration: none;
+}
+
+.ex-btn.hover {
+    background-color: var(--color-primary-dark);
+}
+
+.ex-btn.active {
+    background-color: var(--color-secondary);
+}
+
+.ex-btn.disabled {
+    background-color: var(--color-text-decoration);
+    color: var(--color-background);
+}
+
+.ex-btn-no-trans {
+    display: inline-block;
+    width: 8rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50rem;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    text-decoration: none;
+}
+
+.ex-btn-no-trans:hover {
+    background-color: var(--color-primary-dark);
+    cursor: pointer;
+}
+
+.ex-btn-no-trans:active {
+    background-color: var(--color-secondary);
+}
+
+.ex-btn-no-trans:disabled {
+    background-color: var(--color-text-decoration);
+    color: var(--color-background);
+}
+
+.ex-btn-trans {
+    display: inline-block;
+    width: 8rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50rem;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    text-decoration: none;
+
+    transition: background-color 0.25s ease-in-out
+}
+
+.ex-btn-trans:hover {
+    background-color: var(--color-primary-dark);
+    cursor: pointer;
+}
+
+.ex-btn-trans:active {
+    background-color: var(--color-secondary);
+}
+
+.ex-btn-trans:disabled {
+    background-color: var(--color-text-decoration);
+    color: var(--color-background);
+    cursor: not-allowed;
+}
+
+input:hover,
+label:hover {
+    cursor: pointer;
+}
+

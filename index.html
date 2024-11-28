@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>CSS Animations 101</title>
@@ -134,13 +134,118 @@ transition-timing-function: ease-in-out;
 </code></pre>
             </div>
         </section>
-
-        <br/>
         <h3>When do we use them?</h3>
+        <section>
+            <p>Transitions are great for <b>simple animations</b>, like hover effects, or for when you want to animate a single
+                property. They are easy to implement and don't require much code.</p>
+            <p>Let's imagine our amazing design teams creates a new component with several states:</p>
+            <table>
+                <tr>
+                    <th>Main</th>
+                    <th>Hover</th>
+                    <th>Active</th>
+                    <th>Disabled</th>
+                </tr>
+                <tr>
+                    <td><button class="ex-btn main">Main</button></td>
+                    <td><button class="ex-btn hover">Hover</button></td>
+                    <td><button class="ex-btn active">Active</button></td>
+                    <td><button class="ex-btn disabled">Disabled</button></td>
+                </tr>
+            </table>
+            <p>Let's try to create said button without transitions:</p>
+            <div class="split-window">
+                <div class="code">
+    <pre><code>.ex-btn {
+        background-color: blue;
+    }
+    .ex-btn:hover {
+        background-color: darkblue;
+    }
+    .ex-btn:active {
+        background-color: yellow;
+    }
+    .ex-btn:disabled {
+        background-color: gray;
+    }</code></pre>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center;">
+                    <button id="ex-btn-no-trans" class="ex-btn-no-trans">Main</button>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input
+                                type="checkbox"
+                                id="ex-btn-no-trans-disabler"
+                                onclick="document.getElementById('ex-btn-no-trans').disabled = this.checked"
+                        /><label for="ex-btn-no-trans-disabler">Disable</label>
+                    </div>
+                </div>
+            </div>
+            <p>We can see the changes are abrupt and not very appealing. Now, let's try to create it with transitions:</p>
+            <div class="split-window">
+                <div class="code">
+    <pre><code>.ex-btn {
+        background-color: blue;
+        transition: background-color 0.25s ease-in-out;
+    }
+    .ex-btn:hover {
+        background-color: darkblue;
+    }
+    .ex-btn:active {
+        background-color: yellow;
+    }
+    .ex-btn:disabled {
+        background-color: gray;
+    }</code></pre>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center;">
+                    <button id="ex-btn-trans" class="ex-btn-trans">Main</button>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input
+                                type="checkbox"
+                                id="ex-btn-trans-disabler"
+                                onclick="document.getElementById('ex-btn-trans').disabled = this.checked"
+                        /><label for="ex-btn-trans-disabler">Disable</label>
+                    </div>
+                </div>
+            </div>
+            <p>Much better, right? The transitions make the changes smoother and more appealing to the users.</p>
+        </section>
+        <h3>Exercises</h3>
+        <section>
+            <p>If you want to practice a bit by yourself, why don't you try to create some of the following:</p>
+            <ul>
+                <li>A link that slowly changes opacity when disabled.</li>
+                <li>A button that slightly grows larger when hovered.</li>
+                <li>A div with a gradient background that slowly changes its background position when clicked.</li>
+            </ul>
+        </section>
     </section>
 
     <h2>2. Animations</h2>
-    <section></section>
+    <section>
+        <h3>What does W3C say? &#129488;</h3>
+        <blockquote>CSS allows <b>animation</b> of HTML elements <b>without</b> using JavaScript!.</blockquote>
+        <p>
+            Let us ponder in that affirmation for a second here. Back in the day <i>-I guess, I wasn't around really-</i>
+            if a developer wanted to animate an element, they'd have to use <b>JavaScript</b>. But now, thanks to the advancements
+            in CSS, we can animate elements without having to write a single line of JS code. This has several implications,
+            but the most important one is that these animations are <b>pre-calculated</b> by the browser, which makes them more
+            efficient. This comes with a cost, though: CSS animations are <b>less flexible</b> than JavaScript animations, but there
+            are ways to work around that.
+        </p>
+        <br/>
+        <h3>How can we use them?</h3>
+        <p>
+            Let's take a look at the main properties that take part in an animation. We can distinguish two main parts:
+            <b>Keyframes</b> and <b>Animation Properties</b>.
+        </p>
+        <section>
+            <h4>1. Keyframes</h4>
+            <p>Keyframes are the <b>steps</b> of the animation. They define the <b>start</b> and <b>end</b> of the animation,
+                and any <b>intermediate</b> steps. We can define as many keyframes as we want, but the most common ones are
+                <b>0%</b> and <b>100%</b>, which represent the start and end of the animation, respectively.</p>
+        </section>
+    </section>
 </main>
 
 <footer>
