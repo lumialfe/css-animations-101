@@ -1,0 +1,42 @@
+/*main, aside {*/
+/*    display: none;*/
+/*}*/
+
+/*header {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 90vh;*/
+/*    border: none;*/
+
+/*    font-size: 4rem;*/
+/*}*/
+
+/*.header {*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*h1 {*/
+/*    animation: slide-in-header 0.5s linear;*/
+/*}*/
+
+/*.subheader {*/
+/*    opacity: 0;*/
+/*    animation: slide-in-header 0.5s 0.5s linear forwards;*/
+/*}*/
+
+/*@keyframes slide-in-header {*/
+/*    0% {*/
+/*        transform: translateY(-100%);*/
+/*        opacity: 0;*/
+/*    }*/
+/*    100% {*/
+/*        transform: translateY(0);*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/
+
+/*@keyframes reveal-content {*/
+
+/*}*/

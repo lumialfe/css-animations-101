@@ -51,9 +51,16 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
-    gap: 1rem;
     padding: 1rem 2rem;
     border-bottom: 2px solid var(--color-text-decoration);
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 1rem;
+    width: 100%;
 }
 
 main {
