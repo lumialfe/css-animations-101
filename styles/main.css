@@ -47,27 +47,34 @@ input, button {
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-header {
+.header-step-1 {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
     padding: 1rem 2rem;
     border-bottom: 2px solid var(--color-text-decoration);
+
+    animation: slide-in 1s ease-in-out;
 }
 
-.header {
+.header-container-step-1 {
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: baseline;
     gap: 1rem;
     width: 100%;
+
+    animation: slide-in 0.5s ease-in-out;
 }
 
-main {
+.main-step-1 {
     padding: 2rem;
+
+    animation: slide-in 0.5s 1s ease-in-out backwards;
 }
 
-aside {
+.aside-step-1 {
     width: 93%;
     margin: auto;
     margin-top: 1rem;
@@ -75,6 +82,8 @@ aside {
     border-radius: 1rem;
     background-color: var(--color-background-dark);
     transition: background-color 0.5s ease-in-out;
+
+    animation: slide-in 1s 0.5s ease-in-out backwards;
 }
 
 .back-to-top {
