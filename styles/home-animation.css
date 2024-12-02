@@ -11,8 +11,6 @@
     border: none;
 
     font-size: 4rem;
-
-    cursor: pointer;
 }
 
 .header-container-step-0 {
@@ -24,6 +22,7 @@
     transition: text-shadow 0.25s ease-in-out;
 
     &:hover {
+        cursor: pointer;
         text-shadow: var(--color-text) 0 0 5px;
     }
 }
