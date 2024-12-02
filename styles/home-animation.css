@@ -26,6 +26,10 @@
     animation: slide-in-header 0.5s 0.5s linear forwards;
 }
 
+.footer-step-0 {
+    display: none;
+}
+
 @keyframes slide-in-header {
     0% {
         transform: translateY(-100%);

@@ -6,8 +6,8 @@ html {
     --color-text-decoration : #cacaca;
     --color-primary: #2760fd;
     --color-primary-dark: #1a40a8;
-    --color-secondary: #edbf3b;
-    --color-secondary-dark: #ed943b;
+    --color-secondary: #ffbd00;
+    --color-secondary-dark: #ff7300;
     --color-code: #a51932;
 }
 
@@ -19,8 +19,8 @@ html.dark {
     --color-text-decoration : #cacaca;
     --color-primary: #2760fd;
     --color-primary-dark: #1a40a8;
-    --color-secondary: #edbf3b;
-    --color-secondary-dark: #ed943b;
+    --color-secondary: #ffbd00;
+    --color-secondary-dark: #ff7300;
     --color-code: #e63857;
 }
 
@@ -75,9 +75,9 @@ input, button {
 }
 
 .aside-step-1 {
-    width: 93%;
-    margin: auto;
-    margin-top: 1rem;
+    position: absolute;
+    top: 13.1rem;
+    left: 1.35rem;
     padding: 1rem 2rem;
     border-radius: 1rem;
     background-color: var(--color-background-dark);
@@ -118,9 +118,44 @@ section {
     transition: background-color 0.5s ease-in-out;
 }
 
-footer {
-    padding: 1rem 2rem;
-    text-align: center;
+ul > li {
+    margin-left: -1rem;
+}
+
+ul > li > a,
+ol > li > a {
+    color: var(--color-text) !important;
+    &:hover {
+        color: var(--color-primary) !important;
+    }
+}
+
+.footer-step-1 {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    padding: 1rem;
+
+    background-color: var(--color-background-dark);
+    border-radius: 1rem 1rem 0 0;
+
+    color: var(--color-text-decoration);
+
+    & > div > a,
+    & > a {
+        color: var(--color-text-decoration);
+        transition: color 0.5s ease-in-out;
+        &:hover {
+            color: var(--color-text);
+        }
+    }
+
+    & > div > svg {
+        fill: var(--color-text-decoration);
+    }
+
+    animation: slide-in 1s 1s ease-in-out backwards;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -180,13 +215,12 @@ b {
 }
 
 a {
-    color: var(--color-primary);
-    text-decoration: underline;
-    transition: color, font-weight 0.25s ease-in-out;
+    color: var(--color-secondary);
+    text-decoration: underline 1px solid;
+    transition: color 0.25s ease-in-out;
 
     &:hover {
-        color: var(--color-primary-dark);
-        font-weight: 500;
+        color: var(--color-secondary-dark);
         cursor: pointer;
     }
 }
@@ -216,7 +250,7 @@ h5 {
     background-color: var(--color-text);
     color: var(--color-background);
     font-size: 1rem;
-    overflow: hidden;
+    overflow: scroll;
     transition: background-color 0.5s ease-in-out;
 }
 
@@ -546,11 +580,6 @@ label:hover {
     }
 }
 
-.card-header {
-    width: 160px;
-    height: 160px;
-}
-
 .slide-in-animation {
     animation: slide-in 1s ease-in-out;
 }
@@ -585,6 +614,70 @@ label:hover {
     }
     100% {
         transform: rotate(0deg);
+    }
+}
+
+.card-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.card-example-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 120px;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: 1px solid var(--color-text-decoration);
+    font-size: 1.5rem;
+}
+
+.card-example-2-step-0 {
+    animation: slide-in 0.75s ease-in-out backwards;
+}
+
+.card-example-2-step-1 {
+    animation: slide-in 0.75s 0.25s ease-in-out backwards;
+}
+
+.card-example-2-step-2 {
+    animation: slide-in 0.75s 0.5s ease-in-out backwards;
+}
+
+.card-example-2-step-3 {
+    animation: slide-in 0.75s 0.75s ease-in-out backwards;
+}
+
+.card-example-2-step-4 {
+    animation: slide-in 0.75s 1s ease-in-out backwards;
+}
+
+.card-example-2-step-5 {
+    animation: slide-in 0.75s 1.25s ease-in-out backwards;
+}
+
+.card-example-2-step-6 {
+    animation: slide-in 0.75s 1.5s ease-in-out backwards;
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        padding: 1.5rem 3rem;
+    }
+
+    aside {
+        display: none;
     }
 }
 

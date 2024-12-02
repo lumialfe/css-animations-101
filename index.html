@@ -2,6 +2,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to create animations with CSS!">
+    <meta name="keywords" content="css, animations, transitions, keyframes, web development">
+    <meta name="author" content="LuisMi Alonso">
+    <meta name="robots" content="index, follow">
+
     <title>CSS Animations 101</title>
     <link rel="icon" href="./media/logo.png" type="image/x-icon">
 
@@ -27,7 +33,25 @@
     <h4>Table of Contents</h4>
     <ul>
         <li><a href="#transitions">Transitions</a></li>
+        <li style="list-style-type: none; margin-left: -1rem;">
+            <ol>
+                <li><a href="#definition1">Definition</a></li>
+                <li><a href="#props1">Properties</a></li>
+                <li><a href="#examples1">Examples</a></li>
+                <li><a href="#usage1">Usage</a></li>
+                <li><a href="#ex1">Exercises</a></li>
+            </ol>
+        </li>
         <li><a href="#animations">Animations</a></li>
+        <li style="list-style-type: none; margin-left: -1rem;">
+            <ol>
+                <li><a href="#definition2">Definition</a></li>
+                <li><a href="#props2">Properties</a></li>
+                <li><a href="#examples2">Examples</a></li>
+                <li><a href="#usage2">Usage</a></li>
+                <li><a href="#ex2">Exercises</a></li>
+            </ol>
+        </li>
     </ul>
 </aside>
 
@@ -49,13 +73,13 @@
 <main class="main-step-0">
     <h2 id="transitions">1. Transitions</h2>
     <section>
-        <h3>What does the W3C say? &#129488;</h3>
+        <h3 id="definition1">What does the W3C say? &#129488;</h3>
         <blockquote>CSS transitions allow you to change <b>property values smoothly</b>,
             over a given <b>duration</b>.
         </blockquote>
         <p>In simple words: it's like an easy to implement animation, which we'll take a look at later on.</p>
         <br/>
-        <h3>How can we use them?</h3>
+        <h3 id="props1">How can we use them?</h3>
         <p>Let's take a look at the main properties that take part in a transition:</p>
         <section>
             <h4>1. Transition Property</h4>
@@ -105,7 +129,7 @@
 </code></pre>
             </div>
         </section>
-        <h3>On to some examples!</h3>
+        <h3 id="examples1">On to some examples!</h3>
         <p>Let's take a look at some examples of transitions:</p>
         <section>
             How will the previous example look like if applied to a cool button?
@@ -161,7 +185,7 @@ transition-timing-function: ease-in-out;
 </code></pre>
             </div>
         </section>
-        <h3>When do we use them?</h3>
+        <h3 id="usage1">When do we use them?</h3>
         <section>
             <p>Transitions are great for <b>simple animations</b>, like hover effects, or for when you want to animate a single
                 property. They are easy to implement and don't require much code.</p>
@@ -237,7 +261,7 @@ transition-timing-function: ease-in-out;
             </div>
             <p>Much better, right? The transitions make the changes smoother and more appealing to the users.</p>
         </section>
-        <h3>Exercises</h3>
+        <h3 id="ex1">Exercises</h3>
         <section>
             <p>If you want to practice a bit by yourself, why don't you try to create some of the following:</p>
             <ul>
@@ -250,7 +274,7 @@ transition-timing-function: ease-in-out;
 
     <h2 id="animations">2. Animations</h2>
     <section>
-        <h3>What does the W3C say? &#129488;</h3>
+        <h3 id="definition2">What does the W3C say? &#129488;</h3>
         <blockquote>CSS allows <b>animation</b> of HTML elements <b>without</b> using JavaScript!.</blockquote>
         <p>
             Let us ponder in that affirmation for a second here. Back in the day <i>-I guess, I wasn't around really-</i>
@@ -261,7 +285,7 @@ transition-timing-function: ease-in-out;
             are ways to work around that.
         </p>
         <br/>
-        <h3>How can we use them?</h3>
+        <h3 id="props2">How can we use them?</h3>
         <p>
             Let's take a look at the main properties that take part in an animation. We can distinguish two main parts:
             <b>Keyframes</b> and <b>Animation Properties</b>.
@@ -416,7 +440,7 @@ transition-timing-function: ease-in-out;
 }</code></pre>
                 </div>
             </section>
-            <h3>On to some more examples!</h3>
+            <h3 id="examples2">On to some more examples!</h3>
             <p>Let's take a look at some more <i>(and cooler)</i> examples of animations:</p>
             <section>
                 <h4>1. Loading Spinner</h4>
@@ -539,17 +563,75 @@ transition-timing-function: ease-in-out;
                     </div>
                 </div>
 
-                <h4>4. Text Animation</h4>
+                <p>
+                    We can also apply a similar set of animations to a bunch of cards inside a grid, take the following
+                    example and think about where something like this could be useful:
+                </p>
+                <div class="card-grid">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; margin: 1rem;">
+                    <button onclick="createCardGrid()">Recreate Grid</button>
+                </div>
+                <p>
+                    The problem here is that we needed <b>7 different classes</b> to create this animation. This number would
+                    grow accordingly with the number of cards we'd want to animate.
+                </p>
+                <blockquote style="text-align: left; margin: 1rem 0; font-style: normal">
+                    <p>
+                        Thankfully, <b>Vue.js</b> gives us a way to
+                        create these animations in a more efficient way: <span class="code-line">TransitionGroup</span>.
+                        <br/>
+                        <br/>
+                        This, though, is a topic for another day. But, if interested, you could find more info about Vue Transitions in the following links:
+                    </p>
+                    <ul>
+                        <li><a href="https://vuejs.org/guide/built-ins/transition" target="_blank">Vue Transition</a></li>
+                        <li><a href="https://vuejs.org/guide/built-ins/transition-group" target="_blank">Vue TransitionGroup</a></li>
+                    </ul>
+                </blockquote>
             </section>
+            <h3 id="usage2">When do we use them?</h3>
+            <section>
+                <p>
+                    CSS animations are great to add a little bit of &#10024; <i>flare</i> &#10024; to your website. Most of the times,
+                    they aren't really a necessity, but they can make your website look more <b>professional</b> and <b>engaging</b>, as well as
+                    help it look <b>cohesive</b> and <b>consistent</b>.
+                </p>
+                <br/>
+                <p>
+                    One of the best uses of animations is to <b>conceal long loading times</b>. Apple, for example, knows this very well and
+                    uses several kinds of animations and gimmicks to trick the brain of the user into thinking that their device is faster
+                    than it actually is. This is a great way to <b>improve user experience</b> and make the user feel more <b>comfortable</b>
+                    with your website.
+                </p>
+                <br/>
+                <p>
+                    If we take a look at the card grid example above, we can see that the cards take a total of <b>2.25 seconds</b> to completely
+                    be displayed to the user. This well be plenty of time for us to <b>load any data</b> we need to display, making the waiting time not
+                    be as noticeable to the final user.
+                </p>
+            </section>
+
+            <h3 id="ex2">Exercises</h3>
+            <section></section>
         </section>
     </section>
 </main>
 
-<footer>
-
+<footer class="footer-step-0">
+    <div style="display: flex; gap: 1rem; align-items: center">
+        <svg height="24" aria-hidden="true" viewBox="0 0 24 24" width="24" data-view-component="true">
+            <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+        </svg>
+        <a href="https://github.com/lumialfe/css-animations-101" target="_blank">Repository</a>
+    </div>
+    <p>&copy; 2024 LuisMi Alonso</p>
+    <a href="https://github.com/lumialfe">@lumialfe</a>
 </footer>
 
 <script>
+    document.getElementById('dark-mode-toggle').style.display = 'none';
+
     window.addEventListener('scroll', () => {
         const backToTop = document.getElementById('back-to-top');
         if (window.scrollY > 250) {
@@ -559,25 +641,53 @@ transition-timing-function: ease-in-out;
         }
     });
 
-    window.addEventListener("click", () => {
+    function welcomeAnimation() {
         document.getElementsByClassName('main-step-0')[0].classList.remove('main-step-0');
         document.getElementsByClassName('header-step-0')[0].classList.remove('header-step-0');
         document.getElementsByClassName('header-container-step-0')[0].classList.remove('header-container-step-0');
         document.getElementsByClassName('subheader-step-0')[0].classList.remove('subheader-step-0');
         document.getElementsByClassName('h1-step-0')[0].classList.remove('h1-step-0');
         document.getElementsByClassName('aside-step-0')[0].classList.remove('aside-step-0');
-        document.getElementsByClassName('header-container-step-0')[0].classList.remove('header-container-step-0');
+        document.getElementsByClassName('footer-step-0')[0].classList.remove('footer-step-0');
 
-        // document.getElementsByTagName('main')[0].classList.add('main-step-1');
-        // document.getElementsByTagName('header')[0].classList.add('header-step-1');
-        // document.getElementsByTagName('div')[0].classList.add('header-container-step-1');
-        // document.getElementsByTagName('span')[0].classList.add('subheader-step-1');
-        // document.getElementsByTagName('h1')[0].classList.add('h1-step-1');
-        // document.getElementsByTagName('aside')[0].classList.add('aside-step-1');
-        // document.getElementsByClassName('header-container')[0].classList.add('header-container-step-1');
+        document.getElementsByTagName('main')[0].classList.add('main-step-1');
+        document.getElementsByTagName('header')[0].classList.add('header-step-1');
+        document.getElementsByTagName('div')[0].classList.add('header-container-step-1');
+        document.getElementsByTagName('span')[0].classList.add('subheader-step-1');
+        document.getElementsByTagName('h1')[0].classList.add('h1-step-1');
+        document.getElementsByTagName('aside')[0].classList.add('aside-step-1');
+        document.getElementsByTagName('footer')[0].classList.add('footer-step-1');
 
-        window.removeEventListener('click', () => {});
+        document.getElementById('dark-mode-toggle').style.display = 'flex';
+    }
+
+    window.addEventListener("click", () => {
+        welcomeAnimation();
     });
+
+    if (window.innerWidth < window.innerHeight) {
+        welcomeAnimation();
+    }
+
+    function createCardGrid() {
+        document.getElementsByClassName('card-grid')[0].innerHTML = '';
+
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 5; j++) {
+                const classList = "card-example-2 " + "card-example-2-step-" + Number(i + j);
+
+                document.getElementsByClassName('card-grid')[0].innerHTML += `
+            <div class="${classList}">
+                <div class="card-header"></div>
+                <div class="card-body">Hello!</div>
+            </div>
+        `;
+            }
+        }
+    }
+
+    createCardGrid();
+
 </script>
 </body>
 </html>
