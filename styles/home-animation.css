@@ -11,6 +11,8 @@
     border: none;
 
     font-size: 4rem;
+
+    cursor: pointer;
 }
 
 .header-container-step-0 {
@@ -19,6 +21,11 @@
 
 .h1-step-0 {
     animation: slide-in-header 0.5s linear;
+    transition: text-shadow 0.25s ease-in-out;
+
+    &:hover {
+        text-shadow: var(--color-text) 0 0 5px;
+    }
 }
 
 .subheader-step-0 {
