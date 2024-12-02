@@ -671,7 +671,11 @@ label:hover {
     animation: slide-in 0.75s 1.5s ease-in-out backwards;
 }
 
-@media screen and (max-width: 1200px) {
+@media only screen and (max-width: 1080px) {
+    html {
+        font-size: 1rem;
+    }
+
     body {
         padding: 1.5rem 3rem;
     }
