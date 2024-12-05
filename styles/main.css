@@ -685,4 +685,8 @@ label:hover {
     }
 }
 
+iframe {
+    border-radius: 0.5rem;
+}
+
 
